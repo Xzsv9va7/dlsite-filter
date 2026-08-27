@@ -1,0 +1,13 @@
+dist/
+web-ext-artifacts/
+*.xpi
+*.zip
+.amo-upload-uuid
+
+Thumbs.db
+desktop.ini
+.DS_Store
+
+node_modules/
+.env
+.env.*

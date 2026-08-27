@@ -1,0 +1,61 @@
+{
+  "manifest_version": 3,
+  "name": "DLsite 作品フィルタ",
+  "version": "1.0.0",
+  "description": "DLsite の作品一覧で、指定したサークル名・作品名・ジャンルに一致する作品を非表示にします。",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "dlsite-filter@xzsv9va7",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.dlsite.com/*"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_title": "DLsite 作品フィルタ設定",
+    "default_icon": {
+      "16": "icon-16.png",
+      "48": "icon-48.png",
+      "128": "icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.dlsite.com/*"
+      ],
+      "js": [
+        "selectors.js",
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
